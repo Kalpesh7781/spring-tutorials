@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd">
+    
+    <!-- Stand alone application -->
+    <util:list list-class="java.util.Vector" id="phone" >
+    <value>9999999999</value>
+    <value>8888888888</value>
+    <value>Standalone</value>
+    </util:list>
+    
+    <util:set set-class="java.util.HashSet" id="add">
+    <value>pimpri</value>
+    <value>pune</value>
+    </util:set>
+    
+    <util:map map-class="java.util.HashMap" id="cour">
+    <entry key="mySql" value="3 months" />
+    <entry key="docker" value="1 months" />
+    </util:map>
+    
+    <bean name="emp2" class="spring.com.collect.Employee">
+    <property name="name" value="MAYUR"/>
+    <property name="address" ref="add"/>
+    <property name="phones" ref="phone"/>
+    <property name="course" ref="cour"/>
+    </bean>
+    
+             
+    
+    <bean name="emp1" class="spring.com.collect.Employee">  
+    <property name="name" value="Kalpesh"/>
+    <property name="phones">
+    <list>
+    <value>9922887781</value>
+    <value>9637114939</value>
+    </list></property>
+    
+    <property name="address">
+    <set>
+    <value>rajgurunagar</value>
+    <value>pune</value>
+    </set></property>
+    
+    <property name="course">
+    <map>
+    <entry key="java" value="2month"/>
+     <entry key="python" value="1.5month"/>
+    </map>
+    </property>
+     </bean>
+    
+            <!-- list -->
+             
+
+    <!-- more bean definitions go here -->
+
+</beans>
